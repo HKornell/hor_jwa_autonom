@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(ros2_cpp_template)
+project(light_control_pkg)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
@@ -21,8 +21,11 @@ set(ament_dependencies
   geometry_msgs
 )
 
-# add_executable(simple_sub_node src/print_pose.cpp)
-# ament_target_dependencies(simple_sub_node ${ament_dependencies} )
+add_executable(light_sensor_node src/light_sensor_node.cpp)
+ament_target_dependencies(light_sensor_node ${ament_dependencies})
+
+add_executable(headlight_controller_node src/headlight_controller_node.cpp)
+ament_target_dependencies(headlight_controller_node ${ament_dependencies})
 
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME})
