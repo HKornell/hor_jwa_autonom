@@ -1,5 +1,7 @@
-# `ros2_cpp_template` package
+# `light_control` package
 ROS 2 C++ package.  [![Static Badge](https://img.shields.io/badge/ROS_2-Humble-34aec5)](https://docs.ros.org/en/humble/)
+A "light_control" package 2 node-ból áll. A publisher node a "light_sensor", ami a fényerősség mérésének szimulációjáért felelős.
+A "headlight_controller" a subscriber node, ez szimulálja a fényszóró automatikus vezérlését a fényerősség függvényében. Ha a fény adott érték alatt van felkapcsolja, ha adott érték felett, akkor pedig le. 
 ## Packages and build
 
 It is assumed that the workspace is `~/ros2_ws/`.
