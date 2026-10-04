@@ -33,3 +33,21 @@ source ~/ros2_ws/install/setup.bash
 ``` r
 ros2 launch light_control_pkg light_control.launch.py
 ```
+### Mermaid diagram
+```mermaid
+graph LR
+    N1([/light_sensor])
+    N2([/headlight_controller])
+
+    T1["/ambient_light<br/>std_msgs/msg/Int32"]
+    T2["/headlight_status<br/>std_msgs/msg/Bool"]
+
+    N1 --> T1
+    T1 --> N2
+    N2 --> T2
+
+    style N1 fill:#F5F5DC,stroke:#333,stroke-width:2px,color:#000
+    style N2 fill:#F5F5DC,stroke:#333,stroke-width:2px,color:#000
+    style T1 fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+    style T2 fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+```
