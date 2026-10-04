@@ -15,7 +15,7 @@ class LightSensor : public rclcpp::Node{
             auto message = std_msgs::msg::Int32();
             message.data = lux_lvl;
             light_pub->publish(message);
-            RCLPP_INFO(this->get_logger(), "Jelenlegi fényerő: ", message.data);
+            RCLCPP_INFO(this->get_logger(), "Jelenlegi fényerő: %d", message.data);
 
             lux_lvl += step;
             
@@ -31,7 +31,7 @@ class LightSensor : public rclcpp::Node{
 
 int main(int argc, char * argv[]){
     rclcpp::init(argc, argv);
-    rclcpp:spin(std::make_shared<LightSensor>());
+    rclcpp::spin(std::make_shared<LightSensor>());
     rclcpp::shutdown();
     return 0;
 }
