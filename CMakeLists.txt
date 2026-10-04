@@ -21,11 +21,11 @@ set(ament_dependencies
   geometry_msgs
 )
 
-add_executable(light_sensor_node src/light_sensor_node.cpp)
-ament_target_dependencies(light_sensor_node ${ament_dependencies})
+add_executable(light_sensor src/light_sensor.cpp)
+ament_target_dependencies(light_sensor ${ament_dependencies})
 
-add_executable(headlight_controller_node src/headlight_controller_node.cpp)
-ament_target_dependencies(headlight_controller_node ${ament_dependencies})
+add_executable(headlight_controller src/headlight_controller.cpp)
+ament_target_dependencies(headlight_controller ${ament_dependencies})
 
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME})
