@@ -19,7 +19,7 @@ class LightSensor : public rclcpp::Node{
 
             lux_lvl += step;
             
-            if (lux_lvl > 100 || lux_lvl < 10){
+            if (lux_lvl >= 100 || lux_lvl <= 10){
                 step = step*(-1);
             }
         }
